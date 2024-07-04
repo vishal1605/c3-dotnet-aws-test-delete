@@ -16,14 +16,14 @@ namespace first_web_api_dot_net.Controllers
 
         public IActionResult Index()
         {
-            List<RoleName> roleList = _context.RoleName.ToList<RoleName>();
-            return View(roleList);
+            // List<RoleName> roleList = _context.RoleName.ToList<RoleName>();
+            return View();
         }
 
         public IActionResult Users()
         {
-            List<User> users = _context.Users.Include(u => u.Roles).ToList();
-            return View(users);
+            // List<User> users = _context.Users.Include(u => u.Roles).ToList();
+            return View();
         }
 
         //[HttpPost]
