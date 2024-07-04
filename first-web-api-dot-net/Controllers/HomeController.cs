@@ -8,11 +8,11 @@ namespace first_web_api_dot_net.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly TblContext _context;
-        public HomeController(TblContext _tblContext)
-        {
-            _context = _tblContext;
-        }
+        //private readonly TblContext _context;
+        //public HomeController(TblContext _tblContext)
+        //{
+        //    _context = _tblContext;
+        //}
 
         public IActionResult Index()
         {
