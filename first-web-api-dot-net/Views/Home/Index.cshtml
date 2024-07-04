@@ -1,0 +1,50 @@
+﻿@model List<first_web_api_dot_net.Models.RoleName>
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <div class="col-4 m-auto shadow rounded mt-5 py-4">
+        <form action="/Home/CreateUser" method="post">
+            <div class="form-group mt-3">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" placeholder="Enter email" name="Email">
+            </div>
+            <div class="form-group mt-3">
+                <label for="exampleInputEmail1">Username</label>
+                <input type="text" class="form-control" placeholder="Enter Username" name="Name">
+            </div>
+            <div class="form-group mt-3">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" name="Password" placeholder="Password">
+            </div>
+            <div class="form-group mt-3">
+                <label for="exampleInputEmail1">Gender</label>
+                <select class="form-control" name="Gender">
+                    <option>Male</option>
+                    <option>Female</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group mt-3">
+                <label for="exampleInputEmail1">Roles</label>
+                <ul class="list-group">
+                    @foreach (var role in Model)
+                    {
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="@role.Role" aria-label="..." name="Roles">
+                            @role.Role
+                        </li>
+                    }
+                    
+                </ul>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-4">Add User</button>
+        </form>
+    </div>
+</div>
